@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,html,css}\"",
+    "dev": "parcel index.html game.html game-list.html new-game.html"
+  },
+  "devDependencies": {
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.2.1"
+  }
+}

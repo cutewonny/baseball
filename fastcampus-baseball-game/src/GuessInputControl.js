@@ -33,6 +33,10 @@ export default class GuessInputControl {
       }
     });
   }
+  disable() {
+    this.inputEl.disable = true;
+    this.inputEl.placeholder = '게임 끝';
+  }
 
   clear() {
     this.inputEl.value = '';

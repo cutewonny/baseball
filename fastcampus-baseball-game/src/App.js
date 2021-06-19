@@ -38,6 +38,7 @@ class App {
     console.log(result.isDone());
     if (result.isDone()) {
       alert('정답입니다');
+      this.blockGame();
     }
     this.resultsContainerEl.insertAdjacentHTML('afterbegin', this.createResultEl(values, result.toString()));
   }
@@ -49,6 +50,10 @@ class App {
     <span class="guess">${a}</span>
     <span class="badge result">${b}</span>
     </li>`;
+  }
+
+  blockGame() {
+    this.inputControl.disable();
   }
 }
 

@@ -355,6 +355,12 @@ var GuessInputControl = /*#__PURE__*/function () {
   }
 
   _createClass(GuessInputControl, [{
+    key: "disable",
+    value: function disable() {
+      this.inputEl.disable = true;
+      this.inputEl.placeholder = '게임 끝';
+    }
+  }, {
     key: "clear",
     value: function clear() {
       this.inputEl.value = '';
@@ -429,6 +435,7 @@ var App = /*#__PURE__*/function () {
 
       if (result.isDone()) {
         alert('정답입니다');
+        this.blockGame();
       }
 
       this.resultsContainerEl.insertAdjacentHTML('afterbegin', this.createResultEl(values, result.toString()));
@@ -439,6 +446,11 @@ var App = /*#__PURE__*/function () {
       console.log('a: ', a);
       console.log('b: ', b);
       return "<li class=\"list-group-item\">\n    <span class=\"guess\">".concat(a, "</span>\n    <span class=\"badge result\">").concat(b, "</span>\n    </li>");
+    }
+  }, {
+    key: "blockGame",
+    value: function blockGame() {
+      this.inputControl.disable();
     }
   }]);
 
@@ -474,7 +486,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56554" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62605" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
